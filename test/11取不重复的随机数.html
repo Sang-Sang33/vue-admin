@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arr = [];
+        function getRandArr(newArr) {
+            let num = getRandNumber(100, 10);
+            if (newArr.length === 10) {
+                return;
+            }
+            if (newArr.indexOf(num) === -1) {
+                newArr.push(num);
+            }
+            getRandArr(newArr);
+        }
+
+        getRandArr(arr);
+    
+        // var arr = [];
+        // var randNum;
+        // while (true) {
+        //     randNum = getRandNumber(100, 10);
+        //     if (arr.indexOf(randNum) === -1) {
+        //         arr.push(randNum);
+        //     }
+        //     if (arr.length === 10) {
+        //         break;
+        //     }
+        // }
+
+        console.log(arr);
+
+        function getRandNumber(a, b) {
+            return Math.floor(Math.random() * (a - b) + b);
+        }
+    </script>
+</body>
+</html>

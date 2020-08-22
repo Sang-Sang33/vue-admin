@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arr = [1, 2, 3, 4, [2, 3, 4], { name: 'minmin', age: 22 }, 34, 5];
+        let cloneArr = deepClone(arr);
+        console.log(cloneArr);
+
+        function deepClone(obj) {
+            var newObj;
+            //判断obj是否为基本类型或者null
+            if (typeof obj !== 'object' || obj === null) {
+                return obj
+            }
+            //判断obj是否为数组
+            else if (Object.prototype.toString.call(obj) === '[object Array]') {
+                newObj = [];
+                for (let i = 0, len = obj.length; i < len; i++) {
+                    //判断obj的每个元素是否为引用类型
+                    if (typeof obj[i] === 'object' && obj[i] !== null) {
+                        newObj[i] = deepClone(obj[i]);
+                    }
+                    else {
+                        newObj[i] = obj[i];
+                    }
+                }
+            }
+            //判断obj是否为对象
+            else if (Object.prototype.toString.call(obj) === '[object Object]') {
+                newObj = {};
+                for (let prop in obj) {
+                    //判断obj的每个元素是否为引用类型
+                    if (typeof obj[prop] === 'object' && obj[prop] !== null) {
+                        newObj[prop] = deepClone(obj[prop]);
+                    }
+                    else {
+                        newObj[prop] = obj[prop];
+                    }
+                }
+            }
+            return newObj;
+        }
+
+    </script>
+</body>
+</html>

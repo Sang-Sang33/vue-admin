@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var arr = [1, 2, 3, 4];
+        var sum = arr.reduce(function (prev, cur, index, arr) {
+            console.log(prev, cur, index);
+            return prev + cur;
+        },5) //注意这里设置了初始值
+        console.log(arr, sum);
+
+    </script>
+
+</body>
+</html>

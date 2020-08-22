@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // function foo(){
+        //     function bar() {
+        //         return 3;
+        //     }
+        //     return bar();
+        //     function bar() {
+        //         return 8;
+        //     }
+        // }
+        // alert(foo());   //8
+
+
+        // function foo(){
+        //     var bar = function() {
+        //         return 3;
+        //     };
+        //     return bar();
+        //     var bar = function() {
+        //         return 8;
+        //     };
+        // }
+        // console.log(foo()); //3
+
+        // console.log(foo());//3
+        // function foo(){
+        //     var bar = function() {
+        //         return 3;
+        //     };
+        //     return bar();
+        //     var bar = function() {
+        //         return 8;
+        //     };
+        // }
+
+        // function foo(){
+        //     return bar();
+        //     var bar = function() {
+        //         return 3;
+        //     };
+        //     var bar = function() {
+        //         return 8;
+        //     };
+        // }
+        // alert(foo());   //TypeError : foo is not a function
+        
+        function hoistVariable() {
+            var foo = 3;
+            
+            {
+                var foo = 5;
+            }
+
+            console.log(foo); // 5
+        }
+
+        hoistVariable();
+    </script>
+</body>
+</html>

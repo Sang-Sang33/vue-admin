@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arr = [1, 2, 1, 2, 4, 2, 4, 2, 1, 2, 2, 2, 2, 1, 'c', 'a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c']
+
+        function sumRepeated(arr) {
+            let obj = {};
+            for (let i = 0, len = arr.length; i < len; i++) {
+                // if(!obj[arr[i]]){
+                //     obj[arr[i]]=1;
+                // }
+                // else {
+                //     obj[arr[i]]++;
+                // }
+                !obj[arr[i]] ? obj[arr[i]] = 1 : obj[arr[i]]++;
+            }
+            return obj;
+        }
+
+        let obj = sumRepeated(arr);
+        let countArr = Object.values(obj);
+        let keysArr = Object.keys(obj);
+        let maxCount = Math.max.apply(null, countArr);
+
+        // let value = keysArr.reduce((pre,cur)=>{
+
+        // })
+
+
+
+        // let obj = arr.reduce((pre,cur,index,arr)=>{
+        //     if(!pre[cur]){
+        //         pre[cur]=1;
+        //     }
+        //     else {
+        //         pre[cur]++;
+        //     }
+        //     return pre;
+        // },{})
+
+        console.log(obj);
+        console.log(maxCount);
+    </script>
+</body>
+</html>

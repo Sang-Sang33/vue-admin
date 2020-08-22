@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 100vh;
+            width: 100%;
+            display: grid;
+        }
+
+        .content {
+            align-self: center;
+            justify-self: center;
+            width: 400px;
+            height: 400px;
+            background-color: chocolate;
+            line-height: 400px;
+            text-align: center;
+            color: crimson;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">
+
+        <div class="content"></div>
+
+    </div>
+
+    <script>
+
+        let oContent = document.getElementsByClassName('content');
+
+        oContent[0].onmousemove = throttle(pointXY, 1000);
+
+        function pointXY(ev) {
+            this.innerText = `${ev.clientX},${ev.clientY}`
+        }
+
+        // function throttle(func, wait) {
+        //     let previous = 0;
+        //     return function () {
+        //         console.log(previous);
+        //         let context = this;
+        //         let args = arguments;
+        //         let now = Date.now();
+        //         if (now - previous >= wait) {
+        //             func.apply(context,args);
+        //             previous = now;
+        //         }
+
+        //     }
+        // }
+
+
+        function throttle(func,wait){
+            let timerId = null;
+            return function(){
+                let context = this;
+                let args = arguments;
+                console.log(timerId);
+                if(!timerId){
+                    timerId = setTimeout(()=>{
+                        func.apply(context,args);
+                        timerId = null;
+                    },wait)
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Animal(val, tem) {
+            this.val = val;
+            this.tem = tem;
+            this.special = 'father';
+        }
+
+        function Cat(name, hobby, val, tem) {
+            var ani = new Animal(val,tem);
+            ani.name = name;
+            ani.hobby = hobby;
+            ani.spe = 'son';
+            return ani;
+        }
+
+
+        let cat = new Cat('cat','mouse','miao,miao','cool');
+
+        let ca = Cat('cat','mouse','miao,miao','cool');
+
+        console.log(cat);
+        console.log(ca);
+
+    </script>
+</body>
+</html>

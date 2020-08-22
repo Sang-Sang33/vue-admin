@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-content {
+            width: 400px;
+            height: 400px;
+            background-color: cadetblue;
+            color: crimson;
+            font-size: 30px;
+            text-align: center;
+            line-height: 400px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box">
+
+        <div class="box-content">
+
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let oContent = document.getElementsByClassName('box-content');
+
+        oContent[0].onmousemove = debounce(position, 1000);
+
+        function position(ev) {
+            this.innerText = `${ev.clientX},${ev.clientY}`;
+        }
+        // //非立即执行
+        function debounce(func, delay) {
+            let timerId = null;
+            return function () {
+                let context = this;
+                let args = arguments;
+                if (timerId) {
+                    clearTimeout(timerId);
+                }
+                timerId = setTimeout(() => {
+                    func.apply(context, args);
+                }, delay)
+            }
+        }
+
+        // function debounce(func, delay) {
+        //     let timerId = null;
+        //     return function () {
+        //         let context = this;
+        //         let args = arguments;
+        //         console.log(timerId);
+        //         if (timerId) {
+        //             clearTimeout(timerId);
+        //         }
+        //         else {
+        //             func.apply(context, args);
+        //         }
+        //         timerId = setTimeout(() => {
+        //             timerId = null;
+        //         }, delay);
+        //     }
+        // }
+
+
+
+
+
+    </script>
+</body>
+</html>

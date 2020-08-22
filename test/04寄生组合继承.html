@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Animal(val, tem) {
+            this.val = val;
+            this.tem = tem;
+            this.special = 'father';
+        }
+        Animal.prototype.age = 22;
+        function Cat(name, hobby, val, tem) {
+            Animal.call(this,val,tem);
+            this.name = name;
+            this.hobby = hobby;
+            this.spe = 'son';
+        }
+        var F = function(){};
+        F.prototype =  Animal.prototype;
+        Cat.prototype = new F('proto,miao-miao','proto,cool');
+        Cat.prototype.constructor = Cat;
+        let cat = new Cat('cat','mouse','miao,miao','cool');
+
+        console.log(cat);
+
+    </script>
+</body>
+</html>
