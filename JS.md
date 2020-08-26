@@ -596,6 +596,28 @@ var mul = arr.reduce((pre,cur)=>(pre*cur));//求积
 
 
 
+## 如何解决跨域
+
+1 . 修改请求头：{  Access - Control - Allow - Orign : *  }
+
+2 . JSONP动态改变script标签里的src属性，缺点：JSONP只支持get请求。
+
+3 . webscoket协议跨域
+
+4 . 代理与反代理
+
+5 . 跨域资源共享cors
+
+
+
+## get与post的区别
+
+gei存储的内容小，不超过2kb；文件的上传用post
+
+get传输数据会在url上显示；post传输数据时不需要在url上显示
+
+get从服务器请求数据，post发送数据给服务器；
+
 
 
 
@@ -846,19 +868,49 @@ function throttle(func,delay){
 ## ES6语言新特性
 
 - 块作用域
-
 - Class类
-
 - 箭头函数
-
 - 模板字符串
-
 - 对象解构
-
 - Promise
-
 - 函数默认参数
-
 - 扩展运算符
 
-  
+## git指令
+
+git add    添加文件到缓存区
+
+git rm   <文件名>   删除文件
+
+git commit -m '注释'      将暂存区的文件提交到本地仓库
+
+git pull	拉取代码
+
+git push	提交到远程仓库
+
+git   status      查看git库的状态
+
+git log  查看日志
+
+git reset --hard  HEAD 	回退到上一个版本
+
+git分支管理
+
+git branch <分支名>	创建分支
+
+git checkout  切换分支
+
+git push origin <分支名> 	将分支提前到远程仓库
+
+git merge  合并某分支的内容到当前分支
+
+git branch -d  <分支名>  删除本地分支
+
+git push origin  --delete	删除远程分支
+
+git branch -r	查看远程仓库的分支
+
+git branch  -a   查看当前所有的分支
+
+git rebase -i    合并多次提交
+
